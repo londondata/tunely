@@ -33,13 +33,13 @@ const sampleAlbums = [{
 
 $(document).ready(function() {
   console.log('app.js loaded!');
-  renderAlbum(sampleAlbums[0]);
 });
 
 
 // this function takes a single album and renders it to the page
-function renderAlbum(album) {
+sampleAlbums.forEach(function renderAlbum(album) {
   console.log('rendering album:', album);
+
   let albumData = `<div class="row album">
             <div class="col-md-10 col-md-offset-1">
               <div class="panel panel-default">
@@ -54,23 +54,36 @@ function renderAlbum(album) {
                       <ul class="list-group">
                         <li class="list-group-item">
                           <h4 class='inline-header'>Album Name:</h4>
-                          <span class='album-name'>${sampleAlbums.name}</span>
+                          <span class='album-name'>${album.name}</span>
                         </li>
 
                         <li class="list-group-item">
                           <h4 class='inline-header'>Artist Name:</h4>
-                          <span class='artist-name'>${sampleAlbums.artistName}</span>
+                          <span class='artist-name'>${album.artistName}</span>
                         </li>
 
                         <li class="list-group-item">
                           <h4 class='inline-header'>Released date:</h4>
-                          <span class='album-releaseDate'>${sampleAlbums.releaseDate}</span>
+                          <span class='album-releaseDate'>${album.releaseDate}</span>
                         </li>
                       </ul>
                     </div>`;
+  $('#albums').prepend(albumData);
+});
 
-$('#albums').prepend(albumData);
-}
+
+
+
+
+// $.ajax ({
+//   method: "GET",
+//   url: "/api/album",
+//   data:
+//   success: function(renderAlbum),
+//   error: 
+
+
+// })
 
 
 
