@@ -5,6 +5,7 @@
  *
  */
  
+console.log("Sanity Check: JS is working!");
 
 // hard-coded data
 var sampleAlbums = [{
