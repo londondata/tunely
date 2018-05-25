@@ -26,9 +26,14 @@ const albums = [{
   genres: [ 'country', 'rock' ]
 }];
 
+const db = require('../models');
+
 // GET /api/albums
 function index(req, res) {
+	db.Album.find({}, function(err, allAlbums) {
+	res.json(allAlbums);
   // send back all albums as JSON
+});
 }
 
 // POST /api/albums
