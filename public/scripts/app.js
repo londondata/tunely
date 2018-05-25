@@ -55,7 +55,8 @@ function handleError(err){
 
 
 // this function takes a single album and renders it to the page
-sampleAlbums.forEach(function renderAlbum(album) {
+// sampleAlbums.forEach()
+function renderAlbum(album) {
   console.log('rendering album:', album);
 
   let albumData = `<div class="row album">
@@ -87,9 +88,12 @@ sampleAlbums.forEach(function renderAlbum(album) {
                       </ul>
                     </div>`;
   $('#albums').prepend(albumData);
+};
+
+$( "#album-form form" ).on( "submit", function( e ) {
+  e.preventDefault();
+  console.log( $( this ).serialize() );
 });
-
-
 
 
 

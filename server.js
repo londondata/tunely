@@ -24,7 +24,7 @@ app.get('/', function (req, res) {
 
 //get route for controllers
 app.get('/api', controllers.api.index);
-app.get('/api', controllers.albums.index);
+app.get('/api/albums', controllers.albums.index);
 
 
 
